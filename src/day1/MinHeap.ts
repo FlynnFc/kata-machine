@@ -57,13 +57,13 @@ export default class MinHeap {
             return;
         }
 
-        const p = this.parent(idx);
-        const parentV = this.data[p];
-        const v = this.data[idx];
-        if (parentV > v) {
-            this.data[idx] = parentV;
-            this.data[p] = v;
-            this.heapifyUp(p);
+        const parent = this.parent(idx);
+        const pValue = this.data[parent];
+        const currVal = this.data[idx];
+        if (pValue > currVal) {
+            this.data[idx] = pValue;
+            this.data[parent] = currVal;
+            this.heapifyUp(parent);
         }
     }
 
